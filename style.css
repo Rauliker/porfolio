@@ -1,0 +1,344 @@
+
+/* ==============================
+   ESTILOS GENERALES
+================================= */
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ==============================
+   CABECERA
+================================= */
+
+header {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+  text-align: center;
+  padding: 75px 20px 35px;
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 10px;
+}
+
+header > p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+}
+
+/* ==============================
+   NAVEGACIÓN
+================================= */
+
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 9px 16px;
+  border-radius: 8px;
+  transition: background 0.25s, color 0.25s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  outline: none;
+}
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+================================= */
+
+main {
+  max-width: 1000px;
+  width: calc(100% - 40px);
+  margin: 45px auto;
+}
+
+section {
+  background: var(--surface);
+  padding: 35px;
+  margin-bottom: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  scroll-margin-top: 25px;
+}
+
+section h2 {
+  font-size: 1.7rem;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 65px;
+  height: 2px;
+  background: var(--primary);
+}
+
+section p {
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==============================
+   LISTA DE HABILIDADES
+================================= */
+
+#habilidades ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#habilidades li {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 13px 16px;
+  font-weight: 500;
+  color: #334155;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+#habilidades li::before {
+  content: "✓";
+  color: var(--primary);
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+#habilidades li:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   PROYECTOS Y EXPERIENCIA
+================================= */
+
+article {
+  padding: 22px;
+  margin-bottom: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+}
+
+article h3 {
+  font-size: 1.12rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+article p {
+  margin-bottom: 0;
+}
+
+/* ==============================
+   OBJETIVOS
+================================= */
+
+#objetivos {
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+  border-color: #bfdbfe;
+}
+
+#objetivos h2::after {
+  background: var(--primary-dark);
+}
+
+/* ==============================
+   CONTACTO
+================================= */
+
+#contacto ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#contacto li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+
+#contacto li:last-child {
+  border-bottom: none;
+}
+
+#contacto strong {
+  color: var(--text);
+  display: inline-block;
+  min-width: 75px;
+}
+
+#contacto a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+#contacto a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ==============================
+   PIE DE PÁGINA
+================================= */
+
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 0.9rem;
+}
+
+footer p + p {
+  margin-top: 5px;
+  color: #94a3b8;
+}
+
+/* ==============================
+   ACCESIBILIDAD
+================================= */
+
+a:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* ==============================
+   DISEÑO RESPONSIVE
+================================= */
+
+@media (max-width: 600px) {
+  header {
+    padding: 50px 16px 28px;
+  }
+
+  header h1 {
+    letter-spacing: -0.8px;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+
+  nav a {
+    padding: 8px 10px;
+    font-size: 0.88rem;
+  }
+
+  main {
+    width: calc(100% - 24px);
+    margin: 24px auto;
+  }
+
+  section {
+    padding: 23px 18px;
+    margin-bottom: 18px;
+  }
+
+  section h2 {
+    font-size: 1.45rem;
+  }
+
+  #habilidades ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  article {
+    padding: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    transform: none !important;
+  }
+}
